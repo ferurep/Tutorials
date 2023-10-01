@@ -1,0 +1,36 @@
+"use strict";
+let lname;
+lname = "fer";
+let newname = lname.toLocaleUpperCase();
+console.log(newname);
+let age;
+age = 25;
+let result;
+let dob = "25";
+result = parseInt(dob);
+let isValid = false;
+console.log(isValid);
+let emplist;
+emplist = ["jfvs", "jfvs1", "jfvs2"];
+let numlist;
+numlist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+let results = numlist.filter((numb) => numb > 2);
+let num = numlist.find((numb) => numb === 2);
+let emp = emplist.find((emp) => emp === "jfvs2");
+let sum = numlist.reduce((acc, numbe) => acc + numbe);
+const evenNumbers = numlist.filter(number => number % 2 === 0);
+const oddNumbers = numlist.filter(number => number % 2 !== 0);
+console.log(results);
+console.log(num);
+console.log(emp);
+console.log(sum);
+console.log(evenNumbers);
+console.log(oddNumbers);
+let _color = 2 /* Color.Red */;
+let swapNumbs;
+function swapNumbers(num1, num2) {
+    return [num2, num1];
+}
+swapNumbs = swapNumbers(10, 20);
+swapNumbs[0];
+swapNumbs[1];
