@@ -11,8 +11,11 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
     return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
 };
 var _Employee_id;
+Object.defineProperty(exports, "__esModule", { value: true });
+//this is how to implement class/module from another file 'implements Login'
 //Class Properties and Constructor
 class Employee {
+    //address: string;
     //{get;set;}
     get empID() {
         return __classPrivateFieldGet(this, _Employee_id, "f");
@@ -34,6 +37,10 @@ class Employee {
         this.name = name;
         this.address = address;
     }
+    //this is how to implements
+    Login() {
+        return { name: "John", id: 1, email: "" };
+    }
     //this how to create method
     getNamewithAddress() {
         return `${this.name} stays at ${this.address}`;
@@ -43,15 +50,26 @@ _Employee_id = new WeakMap();
 // extends like inheritance OOP in c#
 class Manager extends Employee {
     constructor(id, name, address) {
+        //super is needed to call parent class/ constructor
         super(id, name, address);
     }
 }
 // this is how to get Static object
 //Employee.getEmployeeCount();
-let john = new Employee(1, "John", "Highway Run");
+let john = new Employee(1, "John", {
+    street: "ABC",
+    city: "Calamba",
+    state: "Laguna",
+    zipcode: "420"
+}); // "Highway Run"
 console.log(john);
 console.log(john.getNamewithAddress());
-let mike = new Manager(2, "Mike", "Driver sa kanto");
+let mike = new Manager(2, "Mike", {
+    street: "ABC",
+    city: "Calamba",
+    state: "Laguna",
+    zipcode: "420"
+}); //"Driver sa kanto"
 console.log(mike.getNamewithAddress());
 //set new ID num
 john.empID = 100;
