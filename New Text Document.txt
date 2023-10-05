@@ -1,2 +1,10 @@
 https://www.youtube.com/watch?v=3qBXWUpoPHo&t=9663s
-2:36:25
+3:52:13
+
+HOW TO CREATE NEW COMPONENT
+    -ng generate component 'name of the component'(shortcut : ng g c 'name')
+
+Angular
+[] = Box syntax
+() = Banana syntax
+'ngIf' = is a structural directive that is used to conditionally render or remove elements from the DOM

@@ -1,0 +1,32 @@
+<h1>This is how to use Interpolation syntax. {{hotelName}}</h1>
+
+<div [hidden]="hideRooms">
+    (This is how Property Binding Works.) Number of rooms :
+    <div [innerText]="numberOfRooms"></div>
+</div>
+
+<!-- "non-collisional operator" -->
+{{rooms?.availableRooms?? 'No rooms'}}
+
+<div *ngIf="rooms.availableRooms > 0">
+    Rooms List
+    <!-- {{roomList}} -->
+    <table>
+        <tr>
+            <th>Room Number</th>
+            <th>Room Type</th>
+            <th>Room Price</th>
+            <th>Room Amenities</th>
+            <th>Checkin Time</th>
+        </tr>
+        <tr *ngFor="let _roomList of roomList">
+            <td>{{_roomList.roomNumber}}</td>
+            <td>{{_roomList.roomType}}</td>
+            <td>{{_roomList.price}}</td>
+            <td>{{_roomList.amenities}}</td>
+            <td>{{_roomList.amenities}}</td>
+        </tr>
+    </table>
+</div>
+
+<button (click)="toggle()">This is Event Binding</button>
