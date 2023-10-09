@@ -1,5 +1,5 @@
 https://www.youtube.com/watch?v=3qBXWUpoPHo&t=9663s
-3:52:13
+4:04:34
 
 HOW TO CREATE NEW COMPONENT
     -ng generate component 'name of the component'(shortcut : ng g c 'name')

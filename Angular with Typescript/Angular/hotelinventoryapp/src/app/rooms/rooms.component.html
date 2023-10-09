@@ -6,8 +6,9 @@
 </div>
 
 <!-- "non-collisional operator" -->
-{{rooms?.availableRooms?? 'No rooms'}}
+<!-- {{rooms?.availableRooms?? 'No rooms'}} -->
 
+<!-- ngIf -->
 <div *ngIf="rooms.availableRooms > 0">
     Rooms List
     <!-- {{roomList}} -->
@@ -21,7 +22,9 @@
             <th>Room Amenities</th>
             <th>Checkin Time</th>
         </tr>
-        <tr *ngFor="let _roomList of roomList; let o =odd; let e=even;let i = index;">
+        <!-- ngFor -->
+        <!-- ngClass -->
+        <tr [ngClass]="e?'even':'odd'" *ngFor="let _roomList of roomList; let e =even; let o=odd;let i = index;">
             <td>{{i}}</td>
             <td>{{e?"Even":"Odd"}}</td>
             <td>{{_roomList.roomNumber}}</td>
