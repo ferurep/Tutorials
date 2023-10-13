@@ -12,41 +12,17 @@
 {{roomList | json}}
 </div>
 
+<div *ngIf="selectedRoom">
+    {{selectedRoom | json}}
+</div>
+
 
 <!-- ngIf -->
 <div *ngIf="rooms.availableRooms > 0">
     Rooms List
-    <!-- {{roomList}} -->
-    <table class="table">
-        <tr>
-            <th>Index</th>
-            <th>Even/Odd</th>
-            <th>Room Number</th>
-            <th>Room Type</th>
-            <th>Room Price</th>
-            <th>Room Amenities</th>
-            <th>Checkin Time</th>
-            <th>Rating</th>
-        </tr>
-        <!-- to use Pipe Use this Operator "|" -->
-        <!-- ngFor -->
-        <!-- ngClass -->
-        <tr [ngClass]="e?'even':'odd'" *ngFor="let _roomList of roomList; let e =even; let o=odd;let i = index;">
-            <!-- PercentPipe -->
-            <td>{{i|percent}}</td>
-            <td>{{e?"Even":"Odd"}}</td>
-            <td>{{_roomList.roomNumber}}</td>
-            <td>{{_roomList.roomType}}</td>
-            <!-- Currency Pipe -->
-            <td>{{_roomList.price | currency :'PHP'}}</td>
-            <!-- UpperCase & LowerCase -->
-            <td>{{_roomList.amenities | uppercase}}</td>  
-           <!-- DatePipe -->
-            <td>{{_roomList.checkInTime | date}}</td>
-            <!-- DemicalPipe -->
-            <td>{{_roomList.rating |number:'1.0-3'}}</td>
-        </tr>
-    </table>
+    <hinv-roomlist [rooms]="roomList" (selectedRoom)="selectRoom($event)">
+        
+    </hinv-roomlist>
 </div>
 
 <button (click)="toggle()">This is Event Binding</button>

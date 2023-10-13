@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RoomList, Rooms } from './rooms';
+import { RoomlistComponent } from './roomlist/roomlist.component';
 
 @Component({
   selector: 'hinv-rooms',
@@ -11,6 +12,8 @@ export class RoomsComponent {
   numberOfRooms = 10;
   hideRooms = false;
   hideJsonPipe = true;
+
+  selectedRoom!:RoomList;
 
   rooms: Rooms = {
     totalRooms: 20,
@@ -98,4 +101,9 @@ export class RoomsComponent {
   togglehideJsonPipe() {
     this.hideJsonPipe = !this.hideJsonPipe;
   }
+
+selectRoom(room:RoomList){
+  this.selectedRoom = room;
+}
+
 }
