@@ -10,6 +10,7 @@ export class RoomsComponent {
   hotelName = 'Hilton Hotle using Interpolation syntax';
   numberOfRooms = 10;
   hideRooms = false;
+  hideJsonPipe = true;
 
   rooms: Rooms = {
     totalRooms: 20,
@@ -17,38 +18,84 @@ export class RoomsComponent {
     bookedRooms: 5
   }
 
-  roomList: RoomList[] =
-    [
+  //roomList: RoomList[] =
+  //  [
+  //    {
+  //      roomNumber:1,
+  //      roomType: 'Deluxe Room',
+  //      amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
+  //      price: 500,
+  //      photos: '',
+  //      checkInTime: new Date(),
+  //      checkOutTime: new Date('October-29-2023'),
+  //      rating:4.5,
+  //    },
+  //    {
+  //      roomNumber:2,
+  //      roomType: 'Deluxe Room',
+  //      amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
+  //      price: 1000,
+  //      photos: '',
+  //      checkInTime: new Date(),
+  //      checkOutTime: new Date('October-29-2023'),
+  //      rating:3.45656,
+  //    },
+  //    {
+  //      roomNumber:3,
+  //      roomType: 'Private Suite',
+  //      amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
+  //      price: 15000,
+  //      photos: '',
+  //      checkInTime: new Date(),
+  //      checkOutTime: new Date('October-29-2023'),
+  //      rating:2.4,
+  //    },
+  //  ];
+
+  
+  //Lifecycle Hooks ngOnInit
+  roomList: RoomList[] = [];
+
+  ngOnInit(): void {
+    this.roomList = [
       {
-        roomNumber:1,
+        roomNumber: 1,
         roomType: 'Deluxe Room',
         amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
         price: 500,
         photos: '',
         checkInTime: new Date(),
-        checkOutTime: new Date('October-29-2023')
+        checkOutTime: new Date('October-29-2023'),
+        rating: 4.5,
       },
       {
-        roomNumber:2,
+        roomNumber: 2,
         roomType: 'Deluxe Room',
         amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
         price: 1000,
         photos: '',
         checkInTime: new Date(),
-        checkOutTime: new Date('October-29-2023')
+        checkOutTime: new Date('October-29-2023'),
+        rating: 3.45656,
       },
       {
-        roomNumber:3,
+        roomNumber: 3,
         roomType: 'Private Suite',
         amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
         price: 15000,
         photos: '',
         checkInTime: new Date(),
-        checkOutTime: new Date('October-29-2023')
+        checkOutTime: new Date('October-29-2023'),
+        rating: 2.4,
       },
     ];
+  }
+
 
   toggle() {
     this.hideRooms = !this.hideRooms;
+  }
+  togglehideJsonPipe() {
+    this.hideJsonPipe = !this.hideJsonPipe;
   }
 }
