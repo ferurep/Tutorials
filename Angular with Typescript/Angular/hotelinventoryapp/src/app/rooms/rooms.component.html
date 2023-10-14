@@ -7,15 +7,9 @@
 
 <!-- "non-collisional operator" -->
 <!-- {{rooms.availableRooms ?? 'No rooms'}} -->
-
 <div [hidden]="hideJsonPipe">
-{{roomList | json}}
-</div>
-
-<div *ngIf="selectedRoom">
-    {{selectedRoom | json}}
-</div>
-
+    {{roomList | json}}
+    </div>
 
 <!-- ngIf -->
 <div *ngIf="rooms.availableRooms > 0">
@@ -24,6 +18,11 @@
         
     </hinv-roomlist>
 </div>
+
+<div *ngIf="selectedRoom">
+    {{selectedRoom | json}}
+</div>
+    
 
 <button (click)="toggle()">This is Event Binding</button>
 <button (click)="togglehideJsonPipe()">This is a JSON Pipe</button>
