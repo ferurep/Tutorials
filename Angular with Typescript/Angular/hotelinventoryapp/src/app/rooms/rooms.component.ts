@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { RoomList, Rooms } from './rooms';
 import { RoomlistComponent } from './roomlist/roomlist.component';
+import { count } from 'rxjs';
 
 @Component({
   selector: 'hinv-rooms',
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']
 })
-export class RoomsComponent {
+export class RoomsComponent implements DoCheck{
   hotelName = 'Hilton Hotle using Interpolation syntax';
   numberOfRooms = 10;
   hideRooms = false;
   hideJsonPipe = true;
+  title ='Room List';
 
   selectedRoom!:RoomList;
 
@@ -57,6 +59,7 @@ export class RoomsComponent {
 
   
   //Lifecycle Hooks ngOnInit
+  //Input() from Rooms(Parent) to Roomlist(Child)
   roomList: RoomList[] = [];
 
   ngOnInit(): void {
@@ -94,9 +97,13 @@ export class RoomsComponent {
     ];
   }
 
+    ngDoCheck() {
+      console.log('on changes is called');
+    }
 
   toggle() {
     this.hideRooms = !this.hideRooms;
+    this.title = 'Rooms List';
   }
   togglehideJsonPipe() {
     this.hideJsonPipe = !this.hideJsonPipe;
@@ -104,6 +111,24 @@ export class RoomsComponent {
 
 selectRoom(room:RoomList){
   this.selectedRoom = room;
+}
+lastcount: number = 3;
+addRoom(){
+  this.lastcount +=1;
+  const room:RoomList = {
+    roomNumber: this.lastcount,
+    roomType: 'Deluxe Room',
+    amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
+    price: 20000,
+    photos: '',
+    checkInTime: new Date(),
+    checkOutTime: new Date('October-29-2023'),
+    rating: 4.5,
+  }
+  //this.roomList.push(room); // this will not work when this 'changeDetection:ChangeDetectionStrategy.OnPush' is declared on child component.ts
+  //...this.roomList(keep the existing data),room(add new record) : this will work when this 'changeDetection:ChangeDetectionStrategy.OnPush' is declared on child component.ts
+  //(...)spread operator
+  this.roomList = [...this.roomList,room]
 }
 
 }

@@ -13,11 +13,16 @@
 
 <!-- ngIf -->
 <div *ngIf="rooms.availableRooms > 0">
-    Rooms List
-    <hinv-roomlist [rooms]="roomList" (selectedRoom)="selectRoom($event)">
+    
+    <hinv-roomlist [rooms]="roomList"  [title]="title" (selectedRoom)="selectRoom($event)">
         
     </hinv-roomlist>
 </div>
+
+<div>
+    <button (click)="addRoom()">Add Room</button>
+</div>
+
 
 <div *ngIf="selectedRoom">
     {{selectedRoom | json}}

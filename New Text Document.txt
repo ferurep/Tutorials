@@ -1,5 +1,5 @@
 https://www.youtube.com/watch?v=3qBXWUpoPHo&t=9663s
-5:09:51
+5:43:31
 
 HOW TO CREATE NEW COMPONENT
     -ng generate component 'name of the component'(shortcut : ng g c 'name')
@@ -9,3 +9,6 @@ Angular
 () = Banana syntax
 'ngIf' = is a structural directive that is used to conditionally render or remove elements from the DOM
 'ngOnInit' = his hook is commonly used to fetch data from a server, set up subscriptions, or perform other initialization tasks when a component is created
+'changeDetection' = Use only when component have input and output
+'...'(spread operator) = Use to cloning Array or Object or Merging 2 separate Array or Object. When you want to modify and array/object without affecting the original.
+'ngOnchanges' = You can only use this on component or directive which have a input property in it.
