@@ -1,21 +1,22 @@
-import { Component, DoCheck } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, ViewChild, AfterViewChecked } from '@angular/core';
 import { RoomList, Rooms } from './rooms';
 import { RoomlistComponent } from './roomlist/roomlist.component';
 import { count } from 'rxjs';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'hinv-rooms',
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']
 })
-export class RoomsComponent implements DoCheck{
+export class RoomsComponent implements DoCheck, AfterViewInit, AfterViewCheck {
   hotelName = 'Hilton Hotle using Interpolation syntax';
   numberOfRooms = 10;
   hideRooms = false;
   hideJsonPipe = true;
-  title ='Room List';
+  title = 'Room List';
 
-  selectedRoom!:RoomList;
+  selectedRoom!: RoomList;
 
   rooms: Rooms = {
     totalRooms: 20,
@@ -57,12 +58,15 @@ export class RoomsComponent implements DoCheck{
   //    },
   //  ];
 
-  
+
   //Lifecycle Hooks ngOnInit
   //Input() from Rooms(Parent) to Roomlist(Child)
   roomList: RoomList[] = [];
 
+  @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
+
   ngOnInit(): void {
+    //console.log(this.headerComponent);
     this.roomList = [
       {
         roomNumber: 1,
@@ -97,9 +101,17 @@ export class RoomsComponent implements DoCheck{
     ];
   }
 
-    ngDoCheck() {
-      console.log('on changes is called');
-    }
+  ngDoCheck() {
+    console.log('on changes is called');
+  }
+
+  ngAfterViewInit(): void {
+    this.headerComponent.title = "Rooms View"; 
+  }
+  
+  ngAfterViewChecked(){
+    
+  }
 
   toggle() {
     this.hideRooms = !this.hideRooms;
@@ -109,26 +121,26 @@ export class RoomsComponent implements DoCheck{
     this.hideJsonPipe = !this.hideJsonPipe;
   }
 
-selectRoom(room:RoomList){
-  this.selectedRoom = room;
-}
-lastcount: number = 3;
-addRoom(){
-  this.lastcount +=1;
-  const room:RoomList = {
-    roomNumber: this.lastcount,
-    roomType: 'Deluxe Room',
-    amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
-    price: 20000,
-    photos: '',
-    checkInTime: new Date(),
-    checkOutTime: new Date('October-29-2023'),
-    rating: 4.5,
+  selectRoom(room: RoomList) {
+    this.selectedRoom = room;
   }
-  //this.roomList.push(room); // this will not work when this 'changeDetection:ChangeDetectionStrategy.OnPush' is declared on child component.ts
-  //...this.roomList(keep the existing data),room(add new record) : this will work when this 'changeDetection:ChangeDetectionStrategy.OnPush' is declared on child component.ts
-  //(...)spread operator
-  this.roomList = [...this.roomList,room]
-}
+  lastcount: number = 3;
+  addRoom() {
+    this.lastcount += 1;
+    const room: RoomList = {
+      roomNumber: this.lastcount,
+      roomType: 'Deluxe Room',
+      amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
+      price: 20000,
+      photos: '',
+      checkInTime: new Date(),
+      checkOutTime: new Date('October-29-2023'),
+      rating: 4.5,
+    }
+    //this.roomList.push(room); // this will not work when this 'changeDetection:ChangeDetectionStrategy.OnPush' is declared on child component.ts
+    //...this.roomList(keep the existing data),room(add new record) : this will work when this 'changeDetection:ChangeDetectionStrategy.OnPush' is declared on child component.ts
+    //(...)spread operator
+    this.roomList = [...this.roomList, room]
+  }
 
 }
