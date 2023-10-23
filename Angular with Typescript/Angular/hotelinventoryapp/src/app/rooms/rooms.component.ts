@@ -9,7 +9,7 @@ import { HeaderComponent } from '../header/header.component';
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']
 })
-export class RoomsComponent implements DoCheck, AfterViewInit, AfterViewCheck {
+export class RoomsComponent implements DoCheck, AfterViewInit, AfterViewChecked {
   hotelName = 'Hilton Hotle using Interpolation syntax';
   numberOfRooms = 10;
   hideRooms = false;

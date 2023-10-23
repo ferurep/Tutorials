@@ -1,5 +1,5 @@
 https://www.youtube.com/watch?v=3qBXWUpoPHo&t=9663s
-6:01:32
+6:14:54
 
 HOW TO CREATE NEW COMPONENT
     -ng generate component 'name of the component'(shortcut : ng g c 'name')
@@ -16,3 +16,4 @@ Angular
 '@' : Decorator =c@ symbol followed by the decorator function's name
 'ngAfterViewInit' =  lifecycle hook that comes after the view is fully initialized.
 'ngAfterViewChecked' = its called after the view has been checked
+'#' : template reference = a symbol followed by a name (ex. #myInput). In component class, you can access the template reference by using the @ViewChild or @ViewChildren decorator or by using the ViewChild and ViewChildren methods(ex. @ViewChild('user',{read:ViewContainerRef}) vcr!: ViewContainerRef;)
