@@ -7,12 +7,19 @@
             Welcome User!
     </div>
     <div *ngSwitchCase="'Admin'">
-        <hinv-rooms></hinv-rooms>
+        <!-- <hinv-rooms></hinv-rooms> -->
+        <hinv-container>
+            <hinv-rooms></hinv-rooms>
+            <hinv-employee></hinv-employee>
+            <h1>This is from ng-content</h1>
+        </hinv-container>
     </div>
     <div *ngSwitchDefault>
             You are not Authorize to view this page.
     </div>
 </div>
+
+
 
 <div #nameDiv>
     

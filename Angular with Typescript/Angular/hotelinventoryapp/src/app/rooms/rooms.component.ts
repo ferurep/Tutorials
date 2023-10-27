@@ -1,8 +1,9 @@
-import { AfterViewInit, Component, DoCheck, ViewChild, AfterViewChecked } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, ViewChild, AfterViewChecked, ViewChildren, QueryList } from '@angular/core';
 import { RoomList, Rooms } from './rooms';
 import { RoomlistComponent } from './roomlist/roomlist.component';
 import { count } from 'rxjs';
 import { HeaderComponent } from '../header/header.component';
+import { RoomsService } from './service/rooms.service';
 
 @Component({
   selector: 'hinv-rooms',
@@ -65,40 +66,15 @@ export class RoomsComponent implements DoCheck, AfterViewInit, AfterViewChecked 
 
   @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
 
+  @ViewChildren(HeaderComponent) headerChildrenComponent!: QueryList<HeaderComponent>;
+
+  constructor(private roomServices: RoomsService){
+
+  }
+
   ngOnInit(): void {
     //console.log(this.headerComponent);
-    this.roomList = [
-      {
-        roomNumber: 1,
-        roomType: 'Deluxe Room',
-        amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
-        price: 500,
-        photos: '',
-        checkInTime: new Date(),
-        checkOutTime: new Date('October-29-2023'),
-        rating: 4.5,
-      },
-      {
-        roomNumber: 2,
-        roomType: 'Deluxe Room',
-        amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
-        price: 1000,
-        photos: '',
-        checkInTime: new Date(),
-        checkOutTime: new Date('October-29-2023'),
-        rating: 3.45656,
-      },
-      {
-        roomNumber: 3,
-        roomType: 'Private Suite',
-        amenities: 'Air Condition, Free Wifi, TV, Bathroom, Kitchen',
-        price: 15000,
-        photos: '',
-        checkInTime: new Date(),
-        checkOutTime: new Date('October-29-2023'),
-        rating: 2.4,
-      },
-    ];
+    this.roomList = this.roomServices.getRooms();
   }
 
   ngDoCheck() {
@@ -106,11 +82,13 @@ export class RoomsComponent implements DoCheck, AfterViewInit, AfterViewChecked 
   }
 
   ngAfterViewInit(): void {
-    this.headerComponent.title = "Rooms View"; 
+    this.headerComponent.title = "Rooms View";
+
+    this.headerChildrenComponent.last.title = "Rooms View Last using ViewChildren";
   }
-  
-  ngAfterViewChecked(){
-    
+
+  ngAfterViewChecked() {
+
   }
 
   toggle() {

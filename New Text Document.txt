@@ -1,5 +1,5 @@
 https://www.youtube.com/watch?v=3qBXWUpoPHo&t=9663s
-6:14:54
+6:59:37
 
 HOW TO CREATE NEW COMPONENT
     -ng generate component 'name of the component'(shortcut : ng g c 'name')
@@ -17,3 +17,11 @@ Angular
 'ngAfterViewInit' =  lifecycle hook that comes after the view is fully initialized.
 'ngAfterViewChecked' = its called after the view has been checked
 '#' : template reference = a symbol followed by a name (ex. #myInput). In component class, you can access the template reference by using the @ViewChild or @ViewChildren decorator or by using the ViewChild and ViewChildren methods(ex. @ViewChild('user',{read:ViewContainerRef}) vcr!: ViewContainerRef;)
+'@ViewChildren' = used to query for one or more child elements or components within the template of a parent component.
+'ngAfterContentInit' = It is often used with Angular's <ng-content> directive, and it's a way to create reusable and flexible components that can accept different content from their parent components.
+'ngOnDestroy' =  used to perform cleanup tasks, unsubscribe from observables, release resources, or perform any necessary cleanup operations to avoid memory leaks and ensure that resources are properly released when a component is no longer needed.
+'Dependency Injection'
+'Service' (ng g(generate) s(service) name(name of folder/service)) 
+          = used to store and share data between different parts of the application, such as components.
+          - encapsulate the business logic and operations of the application. 
+          - esponsible for making HTTP requests to external APIs, handling responses, and providing data to components.

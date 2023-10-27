@@ -7,13 +7,17 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoomlistComponent } from './rooms/roomlist/roomlist.component';
 import { HeaderComponent } from './header/header.component';
+import { ContainerComponent } from './container/container.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoomsComponent,
     RoomlistComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContainerComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,

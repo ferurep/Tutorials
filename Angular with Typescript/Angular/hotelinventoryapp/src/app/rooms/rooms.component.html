@@ -1,6 +1,7 @@
 <!-- <h1>This is how to use Interpolation syntax. {{hotelName}}</h1> -->
 <hinv-header></hinv-header>
 
+
 <div [hidden]="hideRooms">
     (This is how Property Binding Works.) Number of rooms :
     <div [ngStyle]="{'color':rooms.availableRooms ? 'steelblue' : 'red'}" [innerText]="numberOfRooms"></div>
@@ -13,8 +14,9 @@
     </div>
 
 <!-- ngIf -->
-<div *ngIf="rooms.availableRooms > 0">
-    
+<!-- ngDestroy : <div *ngIf="hideRooms"> -->
+<div *ngIf="hideRooms">
+    <!-- <div *ngIf="rooms.availableRooms > 0"> -->
     <hinv-roomlist [rooms]="roomList"  [title]="title" (selectedRoom)="selectRoom($event)">
         
     </hinv-roomlist>
@@ -30,5 +32,5 @@
 </div>
     
 
-<button (click)="toggle()">This is Event Binding</button>
+<button (click)="toggle()">This is Event Binding(Toggle)</button>
 <button (click)="togglehideJsonPipe()">This is a JSON Pipe</button>
