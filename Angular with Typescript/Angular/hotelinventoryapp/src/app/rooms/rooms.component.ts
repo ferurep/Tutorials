@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, DoCheck, ViewChild, AfterViewChecked, ViewChildren, QueryList } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, ViewChild, AfterViewChecked, ViewChildren, QueryList, SkipSelf } from '@angular/core';
 import { RoomList, Rooms } from './rooms';
 import { RoomlistComponent } from './roomlist/roomlist.component';
 import { count } from 'rxjs';
@@ -68,7 +68,7 @@ export class RoomsComponent implements DoCheck, AfterViewInit, AfterViewChecked 
 
   @ViewChildren(HeaderComponent) headerChildrenComponent!: QueryList<HeaderComponent>;
 
-  constructor(private roomServices: RoomsService){
+  constructor(@SkipSelf() private roomServices: RoomsService){
 
   }
 
