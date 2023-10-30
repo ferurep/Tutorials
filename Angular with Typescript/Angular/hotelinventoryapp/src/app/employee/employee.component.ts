@@ -1,16 +1,16 @@
-import { Component , Self} from '@angular/core';
+import { Component, Self } from '@angular/core';
 import { RoomsService } from '../rooms/service/rooms.service';
 
 @Component({
   selector: 'hinv-employee',
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.scss'],
-  providers:[RoomsService]
+  //providers:[RoomsService]
 })
 export class EmployeeComponent {
 
- employeeName : string ="John";
+  employeeName: string = "John";
 
-constructor(@Self() private roomsServices : RoomsService){}
+  constructor(private roomsServices: RoomsService) { }
 
 }

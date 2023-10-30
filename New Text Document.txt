@@ -1,8 +1,10 @@
 https://www.youtube.com/watch?v=3qBXWUpoPHo&t=9663s
-7:17:37
+7:36:24
 
 HOW TO CREATE NEW COMPONENT
     -ng generate component 'name of the component'(shortcut : ng g c 'name')
+
+GitHub Co-Pilot = Intellisense
 
 Angular
 'constructor' =  are used to initialize the properties and dependencies of a class or component when an instance of that class or component is created
@@ -28,4 +30,11 @@ Angular
           - esponsible for making HTTP requests to external APIs, handling responses, and providing data to components.
 'Singleton Service' = creates a single instance of that service when the application starts, and it maintains that single instance throughout the application's lifecycle.
 'Resolution Modifiers' ------------------
+==============Class based providers ===================
 '@self()' = is a decorator that is used to specify that a dependency should be resolved from the component's own injector, and not from a parent injector.
+'@SkipSelf' = to skip the local injector and look for a dependency in the parent injectors.
+'@Optional' =  is used in conjunction with dependency injection to specify that a dependency is optional
+'@Host' = is used in conjunction with dependency injection to specify that a dependency should be resolved from the host component's injector and not from a parent or ancestor injector
+=======================================================
+================Value providers========================
+'@Inject' = Commonly used in APP_CONFIG
