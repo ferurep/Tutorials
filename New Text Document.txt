@@ -1,5 +1,18 @@
 https://www.youtube.com/watch?v=3qBXWUpoPHo&t=9663s
-7:46:09
+7:51:09
+
+Angular language services extension(Intellisense)
+ng new 'name of web app' --createApplication = false (empty workspace)
+ng g app 'name of app' (empty workspace)
+ng new 'name of web app' (recommended)
+--no-standalone (to generate ngModules)
+
+1. Install Node.js
+2. check version (ng version)
+3. Open in Integrated Terminal where your package.json
+4. run npm install/ npm i (install json package)
+
+ng serve o- = open web
 
 HOW TO CREATE NEW COMPONENT
     -ng generate component 'name of the component'(shortcut : ng g c 'name')

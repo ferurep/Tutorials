@@ -1,0 +1,16 @@
+
+<form [formGroup]="loginfromgroup" (ngSubmit)="loginBtn()">
+<div>
+  <label for="name">Userame: </label>
+  <input id="userName" type="text" formControlName="userName">
+</div>
+<div>
+  <label for="name">Password: </label>
+  <input id="password" type="text" formControlName="password">
+</div>
+<div><p>Form Status: {{ loginfromgroup.status }}</p></div>
+<div>
+  <button type="submit" >Login</button>
+</div>
+
+</form>
