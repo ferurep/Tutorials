@@ -10,7 +10,7 @@
 </div>
 <div><p>Form Status: {{ loginfromgroup.status }}</p></div>
 <div>
-  <button type="submit" >Login</button>
+  <button type="submit" [disabled]="loginfromgroup.invalid">Login</button>
 </div>
 
 </form>
