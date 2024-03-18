@@ -53,3 +53,6 @@ Angular
 '@Inject' = Commonly used in APP_CONFIG
 =======================================================
 import {HttpClientModule} from '@angular/common/http'; = Need to import this to 'app.module.ts' and declare 'HttpClientModule' to imports
+=======================================================
+FormsModule - add to app.module.ts : imports
+router-outlet - need to declare in app.component.html
