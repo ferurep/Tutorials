@@ -15,7 +15,7 @@ ngOnInit(): void {
 
 Loginfnc(){
   if(this.userName==="admin" && this.password==="admin"){
-
+    alert("login success");
   }
 }
 

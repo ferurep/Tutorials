@@ -1,0 +1,22 @@
+.login-form-flex {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;   
+    height: 60%;
+  }
+
+.button-flex-container {
+    // display: block;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.gradient-background {
+    height: 100vh; /* Set the height according to your requirement */
+    background: linear-gradient(to bottom right, black, white); /* Adjust gradient direction and colors as needed */
+    color: white; /* Set text color */
+    font-size: 24px; /* Set text size */
+  }
+    
+    
