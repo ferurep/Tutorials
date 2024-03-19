@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'vsims-login',
@@ -9,13 +10,16 @@ export class LoginComponent implements OnInit{
 userName: string='';
 password: string='';
 
-ngOnInit(): void {
-  
-}
+constructor(private route: Router){}
+
+ngOnInit(): void {}
 
 Loginfnc(){
   if(this.userName==="admin" && this.password==="admin"){
-    alert("login success");
+    this.route.navigate([['/home/']]);
+  }
+  else{
+    alert('invalid username or password');
   }
 }
 
