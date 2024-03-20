@@ -4,11 +4,69 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+    <!-- <mat-nav-list>     
+      <a mat-list-item>Home
+        <a mat-list-item href="#">Home</a>
+      </a>
+      <a mat-list-item href="#">Sales</a>
+      <a mat-list-item href="#">Purchasing</a>
+      <a mat-list-item href="#">Inventory</a>
+      <a mat-list-item href="#">Report</a>
+      <a mat-list-item href="#">Settings</a>
+    </mat-nav-list>  -->
+    <mat-nav-list dense>
+      <!-- <mat-list-item routerLink="#"><mat-icon>dashboard</mat-icon>Dashboard</mat-list-item>
+      <mat-list-item routerLink="#"><mat-icon>check_box</mat-icon>General</mat-list-item>
+      <mat-list-item routerLink="#"><mat-icon>person</mat-icon>Profile</mat-list-item>
+      <mat-list-item routerLink="#"><mat-icon>notification_important</mat-icon>Notification</mat-list-item> -->
+      <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+          <mat-expansion-panel-header>
+              General
+          </mat-expansion-panel-header>
+          <mat-nav-list dense>
+              <a mat-list-item routerLink="#"><mat-icon>attach_money</mat-icon>Billing</a>
+              <a mat-list-item routerLink="#"><mat-icon>notification_important</mat-icon>Notification</a>
+          </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+          <mat-expansion-panel-header>
+              Sales
+          </mat-expansion-panel-header>
+          <mat-nav-list dense>
+              <a mat-list-item routerLink="#"><mat-icon>person_add</mat-icon>Partnership Request</a>
+              <a mat-list-item routerLink="#"><mat-icon>visibility</mat-icon>Profile Visibility</a>
+          </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+        <mat-expansion-panel-header>
+            Purchasing
+        </mat-expansion-panel-header>
+        <mat-nav-list dense>
+            <a mat-list-item routerLink="#"><mat-icon>person_add</mat-icon>Partnership Request</a>
+            <a mat-list-item routerLink="#"><mat-icon>visibility</mat-icon>Profile Visibility</a>
+        </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+      <mat-expansion-panel-header>
+          Inventory
+      </mat-expansion-panel-header>
+      <mat-nav-list dense>
+          <a mat-list-item routerLink="inventory"><span class="material-icons">
+            inventory
+            </span> Product List</a>
+          <a mat-list-item routerLink="#"><mat-icon>visibility</mat-icon>Profile Visibility</a>
+      </mat-nav-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+    <mat-expansion-panel-header>
+        Report
+    </mat-expansion-panel-header>
+    <mat-nav-list dense>
+        <a mat-list-item routerLink="#"><mat-icon>person_add</mat-icon>Partnership Request</a>
+        <a mat-list-item routerLink="#"><mat-icon>visibility</mat-icon>Profile Visibility</a>
     </mat-nav-list>
+</mat-expansion-panel>
+  </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -24,5 +82,7 @@
       <span>VenshopIMS</span>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+

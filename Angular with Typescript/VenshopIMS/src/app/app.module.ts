@@ -12,12 +12,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card'; 
 import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu'; 
 import { HomeComponent } from './home/home.component';
 import { AppNavComponent } from './app-nav/app-nav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { InventoryComponent } from './inventory/inventory.component'; 
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { MatListModule } from '@angular/material/list';
     NotfoundComponent,
     LoginComponent,
     HomeComponent,
-    AppNavComponent
+    AppNavComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,
@@ -33,13 +37,16 @@ import { MatListModule } from '@angular/material/list';
     FormsModule,
     HttpClientModule,
     MatInputModule,
+    MatMenuModule,
     MatCardModule,
     MatFormFieldModule,
     MatButtonModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule
+
   ],
   providers: [
     provideClientHydration(),

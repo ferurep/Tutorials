@@ -16,7 +16,7 @@ ngOnInit(): void {}
 
 Loginfnc(){
   if(this.userName==="admin" && this.password==="admin"){
-    this.route.navigate([['/home/']]);
+    this.route.navigate(['/home']);
   }
   else{
     alert('invalid username or password');
